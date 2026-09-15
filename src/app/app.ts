@@ -7,6 +7,10 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
+
 export class App {
   protected readonly title = signal('JasonNguyenLearningAngularF26');
+
+  Assignment:number = 1;
+  ThisIsString:string = "BabaYaga";
 }
