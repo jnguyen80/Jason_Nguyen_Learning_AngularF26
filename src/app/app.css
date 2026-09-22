@@ -1,0 +1,52 @@
+.container {
+  max-width: 800px;
+  min-height: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  text-align: center;
+  background-color: #a37d45;
+  border-radius: 8px;
+}
+
+.monkey-card {
+  background-color: #807059;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.monkey-card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.monkey-card p {
+  margin: 0.25rem 0;
+  font-family: "Times New Roman";
+}
+
+.monkey-card p:hover {
+  color: #005300;
+}
+
+.toggle-button {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .monkey-card {
+    background-color: #7e5223;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px){
+  .monkey-card {
+    background-color: #ffdaab;
+    text-align: center;
+  }
+}
+
