@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Monkey } from '../../shared/models/monkey';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './monkey-list-item.css',
   templateUrl: './monkey-list-item.html',
 })
-export class MonkeyListItem {}
+export class MonkeyListItem {
+  monkey = input.required<Monkey>();
+}
