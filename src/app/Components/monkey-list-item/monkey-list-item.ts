@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Monkey } from '../../shared/models/monkey';
+import {MonkeyEvent} from '../../shared/models/monkey-event';
 
 @Component({
   imports: [],
@@ -9,4 +10,13 @@ import { Monkey } from '../../shared/models/monkey';
 })
 export class MonkeyListItem {
   monkey = input.required<Monkey>();
+  monkeyEvent = output<MonkeyEvent>();
+
+  open() {
+    this.monkeyEvent.emit({ id: this.monkey().id, action: 'opened' });
+  }
+
+  favourite() {
+    this.monkeyEvent.emit({ id: this.monkey().id, action: 'favourited' });
+  }
 }
