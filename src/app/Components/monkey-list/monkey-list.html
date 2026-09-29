@@ -2,7 +2,7 @@
 
 <div class = "test">
   @for (monkey of monkeys ; track monkey.id) {
-    <app-monkey-list-item [monkey]="monkey"></app-monkey-list-item>
+    <app-monkey-list-item [monkey]="monkey" (monkeyEvent)="onMonkeyEvent($event)"></app-monkey-list-item>
   }
   @empty{
     <p>No more monkeys jumping on the bed.</p>
