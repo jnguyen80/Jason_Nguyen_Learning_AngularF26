@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Monkey } from '../../shared/models/monkey';
+import { MonkeyListItem } from '../monkey-list-item/monkey-list-item';
 
 @Component({
-  imports: [],
+  imports: [MonkeyListItem],
   selector: 'app-monkey-list',
   styleUrl: './monkey-list.css',
   templateUrl: './monkey-list.html',

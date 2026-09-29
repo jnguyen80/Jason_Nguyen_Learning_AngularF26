@@ -1,1 +1,10 @@
-<p>monkey-list works!</p>
+<h1>Monkey List</h1>
+
+<div class = "test">
+  @for (monkey of monkeys ; track monkey.id) {
+    <app-monkey-list-item [monkey]="monkey"></app-monkey-list-item>
+  }
+  @empty{
+    <p>No more monkeys jumping on the bed.</p>
+  }
+</div>

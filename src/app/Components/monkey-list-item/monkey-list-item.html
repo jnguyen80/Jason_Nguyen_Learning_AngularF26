@@ -1,1 +1,17 @@
-<p>monkey-list-item works!</p>
+<h2>{{ monkey().name }}</h2>
+
+@switch (monkey().monkeyType) {
+  @case ('Chimpanzee') {<span class="badge chimpanzee">Chimpanzee</span>}
+  @case ('Orangutan') {<span class="badge orangutan">Orangutan</span>}
+  @case ('Gorilla') {<span class="badge gorilla">Gorilla</span>}
+  @case ('Baboon') {<span class="badge baboon">Baboon</span>}
+  @default {<span class="badge">Monkey</span>}
+}
+
+<p>Species: {{ monkey().species }}</p>
+
+@if (monkey().hasCoolTricks !== undefined) {
+  <p>Has cool tricks: {{ monkey().hasCoolTricks ? 'Yes' : 'No' }}</p>
+} @else {
+  <p>The monkey's tricks are unknown</p>
+}
