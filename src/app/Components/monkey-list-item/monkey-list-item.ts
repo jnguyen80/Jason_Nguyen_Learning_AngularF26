@@ -19,4 +19,8 @@ export class MonkeyListItem {
   favourite() {
     this.monkeyEvent.emit({ id: this.monkey().id, action: 'favourited' });
   }
+
+  remove() {
+    this.monkeyEvent.emit({ id: this.monkey().id, action: 'removed' });
+  }
 }

@@ -1,4 +1,4 @@
 export interface MonkeyEvent {
   id: number;
-  action: 'opened' | 'favourited';
+  action: 'opened' | 'favourited' | 'removed';
 }

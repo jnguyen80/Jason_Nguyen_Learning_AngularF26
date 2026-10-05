@@ -31,4 +31,8 @@ export class MonkeyService {
   addMonkey(newMonkey: Monkey): void {
     this.monkeys.update((list) => [...list, newMonkey]);
   }
+
+  removeMonkey(id: number): void {
+    this.monkeys.update((list) => list.filter((monkey) => monkey.id !== id));
+  }
 }

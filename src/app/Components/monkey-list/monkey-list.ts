@@ -18,6 +18,9 @@ export class MonkeyList {
 
   protected onMonkeyEvent(event: MonkeyEvent) {
     console.log(event);
+    if (event.action === 'removed') {
+      this.monkeyService.removeMonkey(event.id);
+    }
   }
 
   private nextId = 7;
