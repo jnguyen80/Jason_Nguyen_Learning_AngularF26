@@ -18,3 +18,10 @@
     <li>{{ monkey.name }} the {{ monkey.monkeyType }}</li>
   }
 </ul>
+
+<h2>Monkeys with unknown tricks ({{ unknownTrickCount() }})</h2>
+<ul>
+  @for (monkey of unknownTrickMonkeys(); track monkey.id) {
+    <li>{{ monkey.name }} the {{ monkey.monkeyType }}</li>
+  }
+</ul>

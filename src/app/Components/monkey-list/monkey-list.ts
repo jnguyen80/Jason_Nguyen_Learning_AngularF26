@@ -18,6 +18,10 @@ export class MonkeyList {
 
   protected trickSummary = this.monkeyService.trickSummary;
 
+  protected unknownTrickCount = this.monkeyService.unknownTrickCount;
+
+  protected unknownTrickMonkeys = this.monkeyService.unknownTrickMonkeys;
+
   protected onMonkeyEvent(event: MonkeyEvent) {
     console.log(event);
     if (event.action === 'removed') {

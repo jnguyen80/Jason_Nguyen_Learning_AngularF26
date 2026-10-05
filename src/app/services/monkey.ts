@@ -20,9 +20,13 @@ export class MonkeyService {
 
   monkeyList = this.monkeys.asReadonly();
 
-  trickMonkeys = computed(() => this.monkeys().filter((m) => m.hasCoolTricks === true));
+  trickMonkeys = computed(() => this.monkeys().filter((monkey) => monkey.hasCoolTricks === true));
 
   trickSummary = computed(() => `${this.trickMonkeys().length} monkeys have cool tricks`);
+
+  unknownTrickMonkeys = computed(() => this.monkeys().filter((monkey) => monkey.hasCoolTricks === undefined));
+
+  unknownTrickCount = computed(() => this.monkeys().filter((monkey) => monkey.hasCoolTricks === undefined).length);
 
   constructor() {
     effect(() => {
