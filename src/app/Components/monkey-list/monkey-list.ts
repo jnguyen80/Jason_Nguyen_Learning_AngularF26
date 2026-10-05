@@ -12,9 +12,22 @@ import { MonkeyService } from '../../services/monkey';
 export class MonkeyList {
   private monkeyService = inject(MonkeyService);
 
-  protected monkeys = this.monkeyService.monkeyList
+  protected monkeys = this.monkeyService.monkeyList;
+
+  protected trickMonkeys = this.monkeyService.trickMonkeys;
 
   protected onMonkeyEvent(event: MonkeyEvent) {
     console.log(event);
+  }
+
+  private nextId = 7;
+  protected addMonkey() {
+    this.monkeyService.addMonkey({
+      id: this.nextId++,
+      name: 'Rocket',
+      species: 'Common',
+      monkeyType: 'Chimpanzee',
+      hasCoolTricks: true,
+    });
   }
 }

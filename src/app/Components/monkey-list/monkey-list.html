@@ -1,5 +1,7 @@
 <h1>Monkey List</h1>
 
+<button (click)="addMonkey()">Add Monkey</button>
+
 <div class = "test">
   @for (monkey of monkeys() ; track monkey.id) {
     <app-monkey-list-item [monkey]="monkey" (monkeyEvent)="onMonkeyEvent($event)"></app-monkey-list-item>
@@ -8,3 +10,10 @@
     <p>No more monkeys jumping on the bed.</p>
   }
 </div>
+
+<h2>Monkeys with cool tricks ({{ trickMonkeys().length }})</h2>
+<ul>
+  @for (monkey of trickMonkeys(); track monkey.id) {
+    <li>{{ monkey.name }} the {{ monkey.monkeyType }}</li>
+  }
+</ul>
