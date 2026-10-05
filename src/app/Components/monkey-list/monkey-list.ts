@@ -16,6 +16,8 @@ export class MonkeyList {
 
   protected trickMonkeys = this.monkeyService.trickMonkeys;
 
+  protected trickSummary = this.monkeyService.trickSummary;
+
   protected onMonkeyEvent(event: MonkeyEvent) {
     console.log(event);
     if (event.action === 'removed') {

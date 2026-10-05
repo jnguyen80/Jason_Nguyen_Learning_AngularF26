@@ -12,6 +12,7 @@
 </div>
 
 <h2>Monkeys with cool tricks ({{ trickMonkeys().length }})</h2>
+<p>{{ trickSummary() }}</p>
 <ul>
   @for (monkey of trickMonkeys(); track monkey.id) {
     <li>{{ monkey.name }} the {{ monkey.monkeyType }}</li>

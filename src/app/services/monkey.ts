@@ -22,6 +22,8 @@ export class MonkeyService {
 
   trickMonkeys = computed(() => this.monkeys().filter((m) => m.hasCoolTricks === true));
 
+  trickSummary = computed(() => `${this.trickMonkeys().length} monkeys have cool tricks`);
+
   constructor() {
     effect(() => {
       console.log('Monkey count: ', this.monkeys().length);
