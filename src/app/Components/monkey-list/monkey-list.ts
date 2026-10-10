@@ -18,6 +18,8 @@ export class MonkeyList {
 
   protected trickSummary = this.monkeyService.trickSummary;
 
+  protected apiBaseUrl = this.monkeyService.apiBaseUrl;
+
   protected unknownTrickCount = this.monkeyService.unknownTrickCount;
 
   protected unknownTrickMonkeys = this.monkeyService.unknownTrickMonkeys;

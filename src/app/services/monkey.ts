@@ -1,8 +1,11 @@
-import { Service, signal, computed, effect } from '@angular/core';
+import { Service, signal, computed, effect, inject} from '@angular/core';
 import { Monkey } from '../shared/models/monkey';
+import { APP_CONFIG } from '../shared/config/app-config';
 
 @Service()
 export class MonkeyService {
+  private config = inject(APP_CONFIG);
+
   private readonly monkeys = signal<Monkey[]>([
     { id: 1, name: 'Caesar', species: 'Bonobo', monkeyType: 'Chimpanzee', hasCoolTricks: true },
     { id: 2, name: 'Maurice', species: 'Bornean', monkeyType: 'Orangutan', hasCoolTricks: true },
@@ -19,6 +22,8 @@ export class MonkeyService {
   ]);
 
   monkeyList = this.monkeys.asReadonly();
+
+  readonly apiBaseUrl = this.config.apiBaseUrl;
 
   trickMonkeys = computed(() => this.monkeys().filter((monkey) => monkey.hasCoolTricks === true));
 
