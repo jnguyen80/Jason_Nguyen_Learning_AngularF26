@@ -1,8 +1,8 @@
-import { Service, signal, computed, effect, inject} from '@angular/core';
+import { Injectable, signal, computed, effect, inject} from '@angular/core';
 import { Monkey } from '../shared/models/monkey';
 import { APP_CONFIG } from '../shared/config/app-config';
 
-@Service()
+@Injectable({ providedIn: 'root' })
 export class MonkeyService {
   private config = inject(APP_CONFIG);
 
