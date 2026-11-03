@@ -3,6 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Monkey } from '../../shared/models/monkey'
 import { MonkeyService } from '../../services/monkey';
+import { noWhitespaceValidator, nameNotSpeciesValidator } from '../../shared/validator/monkey-validator';
 
 @Component({
   imports: [ReactiveFormsModule],
@@ -20,11 +21,12 @@ export class MonkeyForm {
   protected isEditMode = computed(() => this.id() !== undefined);
 
   protected monkeyForm = this.fb.nonNullable.group({
-    name: ['', [Validators.required, Validators.minLength(2)]],
+    name: ['', [Validators.required, Validators.minLength(2), noWhitespaceValidator]],
     species: ['', Validators.required],
     monkeyType: ['Chimpanzee' as Monkey['monkeyType']],
     hasCoolTricks: [false],
-  });
+  },
+    { validators: nameNotSpeciesValidator });
 
   constructor() {
     effect(() => {

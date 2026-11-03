@@ -6,8 +6,14 @@
     <input type="text" formControlName="name" />
   </label>
   @if (monkeyForm.controls.name.touched) {
-    @if (monkeyForm.controls.name.touched && monkeyForm.controls.name.invalid) {
-      <p class="error">Name is required and must be at least 2 characters.</p>
+    @if (monkeyForm.controls.name.hasError('required')) {
+      <p class="error">Name is required.</p>
+    }
+    @if (monkeyForm.controls.name.hasError('minlength')){
+      <p class="error">Name must be at least 2 characters.</p>
+    }
+    @if (monkeyForm.controls.name.hasError('whitespace')){
+      <p class="error">Name cannot be only spaces.</p>
     }
   }
 
@@ -15,8 +21,15 @@
     Species
     <input type="text" formControlName="species" />
   </label>
-  @if (monkeyForm.controls.species.touched && monkeyForm.controls.species.invalid) {
+  @if (monkeyForm.controls.species.touched && monkeyForm.controls.species.hasError('required')) {
     <p class="error">Species is required.</p>
+  }
+
+  @if (monkeyForm.hasError('nameMatchesSpecies') &&
+    monkeyForm.controls.name.touched &&
+    monkeyForm.controls.species.touched
+    ) {
+    <p class="error">Name and species cannot be the same thing.</p>
   }
 
   <label>
