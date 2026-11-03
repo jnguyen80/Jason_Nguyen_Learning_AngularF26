@@ -13,6 +13,11 @@ import { MonkeyService } from '../../services/monkey';
 export class MonkeyForm {
   private fb = inject(FormBuilder);
   private monkeyService = inject(MonkeyService);
+  private router = inject(Router);
+
+  id = input<string>();
+
+  protected isEditMode = computed(() => this.id() !== undefined);
 
   protected monkeyForm = this.fb.nonNullable.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
@@ -21,6 +26,21 @@ export class MonkeyForm {
     hasCoolTricks: [false],
   });
 
+  constructor() {
+    effect(() => {
+      const id = this.id();
+      if (id === undefined) {
+        return;
+      }
+      const monkey = this.monkeyService.getMonkey(Number(id));
+      if (monkey) {
+        // patchValue() fills only the fields it is given. The form has no id field,
+        // so the id is ignored here and added back on submit.
+        this.monkeyForm.patchValue({ ...monkey, hasCoolTricks: monkey.hasCoolTricks ?? false });
+      }
+    });
+  }
+
   protected onSubmit(): void {
     if (this.monkeyForm.invalid) {
       return;
@@ -28,9 +48,15 @@ export class MonkeyForm {
 
     // getRawValue() includes disabled controls too. value would skip them.
     const formValue = this.monkeyForm.getRawValue();
-    const id = this.monkeyService.nextId();
+    const id = this.isEditMode() ? Number(this.id()) : this.monkeyService.nextId();
 
-    this.monkeyService.addMonkey({ id, ...formValue });
+    if (this.isEditMode()) {
+      this.monkeyService.updateMonkey({ id, ...formValue });
+    } else {
+      this.monkeyService.addMonkey({ id, ...formValue });
+    }
+
     this.monkeyForm.reset();
+    this.router.navigate(['/monkeys', id]);
   }
 }

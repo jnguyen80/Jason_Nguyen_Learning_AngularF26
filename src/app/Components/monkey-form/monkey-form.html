@@ -1,4 +1,4 @@
-<h2>Add Monkey</h2>
+<h2>{{ isEditMode() ? 'Edit Monkey' : 'Add Monkey' }}</h2>
 
 <form class="monkey-form" [formGroup]="monkeyForm" (ngSubmit)="onSubmit()">
   <label>
@@ -34,5 +34,7 @@
     Has cool tricks
   </label>
 
-  <button type="submit" [disabled]="monkeyForm.invalid">Add Monkey</button>
+  <button type="submit" [disabled]="monkeyForm.invalid">
+    {{ isEditMode() ? 'Save Changes' : 'Add Monkey' }}
+  </button>
 </form>

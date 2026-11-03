@@ -13,6 +13,5 @@ export class MonkeyDetail {
 
   id = input.required<string>();
 
-  protected monkey = computed(() =>
-    this.monkeyService.monkeyList().find((monkey) => monkey.id === Number(this.id())))
+  protected monkey = computed(() => this.monkeyService.getMonkey(Number(this.id())));
 }

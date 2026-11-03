@@ -47,8 +47,16 @@ export class MonkeyService {
     this.monkeys.update((list) => [...list, newMonkey]);
   }
 
+  updateMonkey(updated: Monkey): void {
+    this.monkeys.update((list) => list.map((monkey) => (monkey.id === updated.id ? updated : monkey)));
+  }
+
   removeMonkey(id: number): void {
     this.monkeys.update((list) => list.filter((monkey) => monkey.id !== id));
+  }
+
+  getMonkey(id: number): Monkey | undefined {
+    return this.monkeys().find((monkey) => monkey.id === id);
   }
 
   private idCounter = 7;
