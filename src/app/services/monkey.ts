@@ -29,9 +29,13 @@ export class MonkeyService {
 
   trickSummary = computed(() => `${this.trickMonkeys().length} monkeys have cool tricks`);
 
-  unknownTrickMonkeys = computed(() => this.monkeys().filter((monkey) => monkey.hasCoolTricks === undefined));
+  unknownTrickMonkeys = computed(() =>
+    this.monkeys().filter((monkey) => monkey.hasCoolTricks === undefined),
+  );
 
-  unknownTrickCount = computed(() => this.monkeys().filter((monkey) => monkey.hasCoolTricks === undefined).length);
+  unknownTrickCount = computed(
+    () => this.monkeys().filter((monkey) => monkey.hasCoolTricks === undefined).length,
+  );
 
   constructor() {
     effect(() => {
@@ -45,5 +49,10 @@ export class MonkeyService {
 
   removeMonkey(id: number): void {
     this.monkeys.update((list) => list.filter((monkey) => monkey.id !== id));
+  }
+
+  private idCounter = 7;
+  nextId(): number {
+    return this.idCounter++;
   }
 }

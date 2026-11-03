@@ -4,6 +4,8 @@
 
 <button (click)="addMonkey()">Add Monkey</button>
 
+<app-monkey-form />
+
 <div class = "test">
   @for (monkey of monkeys() ; track monkey.id) {
     <app-monkey-list-item [monkey]="monkey" (monkeyEvent)="onMonkeyEvent($event)"></app-monkey-list-item>

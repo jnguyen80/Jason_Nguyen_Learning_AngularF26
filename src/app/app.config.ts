@@ -18,6 +18,6 @@ export const appConfig: ApplicationConfig = {
     },
     //to be able to switch to the real service,
     //you must delete the provider or change the useClass to MonkeyService
-    { provide: MonkeyService, useClass: MockMonkeyService }
+    // { provide: MonkeyService, useClass: MockMonkeyService }
   ]
 };

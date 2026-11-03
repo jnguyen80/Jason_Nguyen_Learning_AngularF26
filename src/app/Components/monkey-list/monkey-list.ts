@@ -2,9 +2,10 @@ import { Component, inject } from '@angular/core';
 import { MonkeyListItem } from '../monkey-list-item/monkey-list-item';
 import { MonkeyEvent } from '../../shared/models/monkey-event';
 import { MonkeyService } from '../../services/monkey';
+import { MonkeyForm} from '../monkey-form/monkey-form';
 
 @Component({
-  imports: [MonkeyListItem],
+  imports: [MonkeyListItem, MonkeyForm],
   selector: 'app-monkey-list',
   styleUrl: './monkey-list.css',
   templateUrl: './monkey-list.html',
@@ -31,10 +32,9 @@ export class MonkeyList {
     }
   }
 
-  private nextId = 7;
   protected addMonkey() {
     this.monkeyService.addMonkey({
-      id: this.nextId++,
+      id: this.monkeyService.nextId(),
       name: 'Rocket',
       species: 'Common',
       monkeyType: 'Chimpanzee',

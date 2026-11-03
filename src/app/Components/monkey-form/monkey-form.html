@@ -1,0 +1,38 @@
+<h2>Add Monkey</h2>
+
+<form class="monkey-form" [formGroup]="monkeyForm" (ngSubmit)="onSubmit()">
+  <label>
+    Name
+    <input type="text" formControlName="name" />
+  </label>
+  @if (monkeyForm.controls.name.touched) {
+    @if (monkeyForm.controls.name.touched && monkeyForm.controls.name.invalid) {
+      <p class="error">Name is required and must be at least 2 characters.</p>
+    }
+  }
+
+  <label>
+    Species
+    <input type="text" formControlName="species" />
+  </label>
+  @if (monkeyForm.controls.species.touched && monkeyForm.controls.species.invalid) {
+    <p class="error">Species is required.</p>
+  }
+
+  <label>
+    Type
+    <select formControlName="monkeyType">
+      <option value="Chimpanzee">Chimpanzee</option>
+      <option value="Orangutan">Orangutan</option>
+      <option value="Gorilla">Gorilla</option>
+      <option value="Baboon">Baboon</option>
+    </select>
+  </label>
+
+  <label class="checkbox">
+    <input type="checkbox" formControlName="hasCoolTricks" />
+    Has cool tricks
+  </label>
+
+  <button type="submit" [disabled]="monkeyForm.invalid">Add Monkey</button>
+</form>
