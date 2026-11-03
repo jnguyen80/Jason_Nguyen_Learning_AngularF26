@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { Monkey } from './shared/models/monkey';
 import { MonkeyList } from './Components/monkey-list/monkey-list';
 import { RouterOutlet } from '@angular/router';
+import { Navbar } from './Components/navbar/navbar';
 
 @Component({
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
-  imports: [ RouterOutlet ]
+  imports: [ RouterOutlet, Navbar ]
 })
 export class App {
   protected title = 'Monkeys from Planet of the Apes';

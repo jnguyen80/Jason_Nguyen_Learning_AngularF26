@@ -1,0 +1,9 @@
+<nav xmlns="http://www.w3.org/1999/html">
+  <a routerLink="/monkeys">Monkeys</a>
+
+  <button (click)="guardSettings.toggle()">
+    {{ guardSettings.guardEnabled() ? 'Unlock Editing' : 'Lock Editing' }}
+  </button>
+
+  <span>Editing is {{ guardSettings.guardEnabled() ? 'locked' : 'unlocked' }}</span>
+</nav>
