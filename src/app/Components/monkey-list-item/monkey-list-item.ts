@@ -1,9 +1,10 @@
 import { Component, input, output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Monkey } from '../../shared/models/monkey';
 import {MonkeyEvent} from '../../shared/models/monkey-event';
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-monkey-list-item',
   styleUrl: './monkey-list-item.css',
   templateUrl: './monkey-list-item.html',

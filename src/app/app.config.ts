@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { routes } from './app.routes';
 import { APP_CONFIG } from './shared/config/app-config';
 import { MonkeyService} from './services/monkey';
@@ -8,7 +8,7 @@ import { MockMonkeyService } from './services/mock-monkey';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes),
+    provideRouter(routes, withComponentInputBinding()),
     {
       provide: APP_CONFIG,
       useValue: {

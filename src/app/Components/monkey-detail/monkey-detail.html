@@ -1,0 +1,15 @@
+@if (monkey(); as m) {
+  <h1>{{ m.name }}</h1>
+  <p>Type: {{ m.monkeyType }}</p>
+  <p>Species: {{ m.species }}</p>
+
+  @if (m.hasCoolTricks !== undefined ) {
+    <p>Has cool tricks: {{ m.hasCoolTricks ? 'Yes' : 'No' }}</p>
+  } @else {
+    <p>The monkey's tricks are unknown</p>
+  }
+} @else {
+  <p>No monkey found with id {{ id() }}.</p>
+}
+
+<a routerLink="/monkeys">Back to list</a>
