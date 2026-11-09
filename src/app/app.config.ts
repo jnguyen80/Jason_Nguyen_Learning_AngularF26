@@ -12,7 +12,7 @@ export const appConfig: ApplicationConfig = {
     {
       provide: APP_CONFIG,
       useValue: {
-        apiBaseUrl: 'https://placeholder.example.com/api',
+        apiBaseUrl: 'https://mysafeinfo.com/api/data',
         defaultMonkeyType: 'Chimpanzee',
       }
     },
