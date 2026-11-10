@@ -4,11 +4,13 @@ import { routes } from './app.routes';
 import { APP_CONFIG } from './shared/config/app-config';
 import { MonkeyService} from './services/monkey';
 import { MockMonkeyService } from './services/mock-monkey';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes, withComponentInputBinding()),
+    provideHttpClient(),
     {
       provide: APP_CONFIG,
       useValue: {

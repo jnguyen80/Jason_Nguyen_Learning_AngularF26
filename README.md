@@ -63,3 +63,6 @@ For more information on using the Angular CLI, including detailed command refere
 I used MySafeInfo Primate Species. Documentation: https://mysafeinfo.com/api/data/primatespecies
 
 Example: https://mysafeinfo.com/api/data/primatespecies
+
+I chose Option A, HttpClient with an Observable. The service subscribes and sets a signal so that the loading and error states are simple signals to control.
+The simple signal still drives add, edit, and delete which I found easier than httpResource.

@@ -1,5 +1,12 @@
 <h1>Monkey List</h1>
 
+@if (isLoading()) {
+  <p>Loading monkeys...</p>
+}
+@if (error(); as message) {
+  <p class="error">{{ message }}</p>
+}
+
 <p>Data source (placeholder): {{ apiBaseUrl }}</p>
 
 <button (click)="addMonkey()">Add Monkey</button>

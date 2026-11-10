@@ -25,6 +25,10 @@ export class MonkeyList {
 
   protected unknownTrickMonkeys = this.monkeyService.unknownTrickMonkeys;
 
+  protected isLoading = this.monkeyService.isLoading;
+
+  protected error = this.monkeyService.error;
+
   protected onMonkeyEvent(event: MonkeyEvent) {
     console.log(event);
     if (event.action === 'removed') {
