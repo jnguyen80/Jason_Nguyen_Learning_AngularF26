@@ -19,13 +19,13 @@
 <p>{{ trickSummary() }}</p>
 <ul>
   @for (monkey of trickMonkeys(); track monkey.id) {
-    <li>{{ monkey.name }} the {{ monkey.monkeyType }}</li>
+    <li>{{ monkey.name }} the {{ monkey.family }}</li>
   }
 </ul>
 
 <h2>Monkeys with unknown tricks ({{ unknownTrickCount() }})</h2>
 <ul>
   @for (monkey of unknownTrickMonkeys(); track monkey.id) {
-    <li>{{ monkey.name }} the {{ monkey.monkeyType }}</li>
+    <li>{{ monkey.name }} the {{ monkey.family }}</li>
   }
 </ul>

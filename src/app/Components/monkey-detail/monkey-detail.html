@@ -1,7 +1,8 @@
 @if (monkey(); as m) {
   <h1>{{ m.name }}</h1>
-  <p>Type: {{ m.monkeyType }}</p>
-  <p>Species: {{ m.species }}</p>
+  <p>Family: {{ m.family }}</p>
+  <p>Region: {{ m.region }}</p>
+  <p>Status: {{ m.status }}</p>
 
   @if (m.hasCoolTricks !== undefined ) {
     <p>Has cool tricks: {{ m.hasCoolTricks ? 'Yes' : 'No' }}</p>

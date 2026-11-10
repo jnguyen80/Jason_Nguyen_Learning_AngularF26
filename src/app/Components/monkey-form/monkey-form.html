@@ -18,27 +18,36 @@
   }
 
   <label>
-    Species
-    <input type="text" formControlName="species" />
+    Family
+    <input type="text" formControlName="family" />
   </label>
-  @if (monkeyForm.controls.species.touched && monkeyForm.controls.species.hasError('required')) {
-    <p class="error">Species is required.</p>
-  }
-
-  @if (monkeyForm.hasError('nameMatchesSpecies') &&
-    monkeyForm.controls.name.touched &&
-    monkeyForm.controls.species.touched
-    ) {
-    <p class="error">Name and species cannot be the same thing.</p>
+  @if (monkeyForm.controls.family.touched && monkeyForm.controls.family.hasError('required')) {
+    <p class="error">Family is required.</p>
   }
 
   <label>
-    Type
-    <select formControlName="monkeyType">
-      <option value="Chimpanzee">Chimpanzee</option>
-      <option value="Orangutan">Orangutan</option>
-      <option value="Gorilla">Gorilla</option>
-      <option value="Baboon">Baboon</option>
+    Region
+    <input type="text" formControlName="region" />
+  </label>
+  @if (monkeyForm.controls.region.touched && monkeyForm.controls.region.hasError('required')) {
+    <p class="error">Region is required.</p>
+  }
+
+  @if (monkeyForm.hasError('nameMatchesFamily') &&
+    monkeyForm.controls.name.touched &&
+    monkeyForm.controls.family.touched
+    ) {
+    <p class="error">Name and family cannot be the same thing.</p>
+  }
+
+  <label>
+    Status
+    <select formControlName="status">
+      <option value="Critically Endangered">Critically Endangered</option>
+      <option value="Endangered">Endangered</option>
+      <option value="Vulnerable">Vulnerable</option>
+      <option value="Near Threatened">Near Threatened</option>
+      <option value="Least Concern">Least Concern</option>
     </select>
   </label>
 

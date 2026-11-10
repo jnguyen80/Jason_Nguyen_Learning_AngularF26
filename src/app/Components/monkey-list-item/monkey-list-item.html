@@ -1,14 +1,18 @@
 <h2>{{ monkey().name }}</h2>
 
-@switch (monkey().monkeyType) {
-  @case ('Chimpanzee') {<span class="badge chimpanzee">Chimpanzee</span>}
-  @case ('Orangutan') {<span class="badge orangutan">Orangutan</span>}
-  @case ('Gorilla') {<span class="badge gorilla">Gorilla</span>}
-  @case ('Baboon') {<span class="badge baboon">Baboon</span>}
-  @default {<span class="badge">Monkey</span>}
+@switch (monkey().status) {
+<!--  @case ('Chimpanzee') {<span class="badge chimpanzee">Chimpanzee</span>}-->
+<!--  @case ('Orangutan') {<span class="badge orangutan">Orangutan</span>}-->
+<!--  @case ('Gorilla') {<span class="badge gorilla">Gorilla</span>}-->
+<!--  @case ('Baboon') {<span class="badge baboon">Baboon</span>}-->
+  @case ('Critically Endangered') {<span class="badge critical">Critically Endangered</span>}
+  @case ('Endangered') {<span class="badge endangered">Endangered</span>}
+  @case ('Vulnerable') {<span class="badge vulnerable">Vulnerable</span>}
+  @default {<span class="badge">{{ monkey().status }}</span>}
 }
 
-<p>Species: {{ monkey().species }}</p>
+<p>Family: {{ monkey().family }}</p>
+<p>Region: {{ monkey().region }}</p>
 
 @if (monkey().hasCoolTricks !== undefined) {
   <p>Has cool tricks: {{ monkey().hasCoolTricks ? 'Yes' : 'No' }}</p>

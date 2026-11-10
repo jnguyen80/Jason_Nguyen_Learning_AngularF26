@@ -36,8 +36,9 @@ export class MonkeyList {
     this.monkeyService.addMonkey({
       id: this.monkeyService.nextId(),
       name: 'Rocket',
-      species: 'Common',
-      monkeyType: 'Chimpanzee',
+      family: 'Mixed',
+      region: 'Unknown',
+      status: 'Least Concern',
       hasCoolTricks: true,
     });
   }

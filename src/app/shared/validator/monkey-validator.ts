@@ -8,12 +8,12 @@ export function noWhitespaceValidator(control: AbstractControl): ValidationError
   return null;
 }
 
-export function nameNotSpeciesValidator(group: AbstractControl): ValidationErrors | null {
+export function nameNotFamilyValidator(group: AbstractControl): ValidationErrors | null {
   const name = group.get('name')?.value;
-  const species = group.get('species')?.value;
+  const family = group.get('family')?.value;
 
-  if (name && species && name.trim().toLowerCase() === species.trim().toLowerCase()) {
-    return { nameMatchesSpecies: true };
+  if (name && family && name.trim().toLowerCase() === family.trim().toLowerCase()) {
+    return { nameMatchesFamily: true };
   }
   return null;
 }

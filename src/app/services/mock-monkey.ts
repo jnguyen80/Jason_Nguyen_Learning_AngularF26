@@ -4,9 +4,9 @@ import { Monkey } from '../shared/models/monkey';
 @Injectable()
 export class MockMonkeyService {
   private readonly monkeys = signal<Monkey[]>([
-    { id: 1, name: 'John', species: 'Mix', monkeyType: 'Chimpanzee', hasCoolTricks: true },
-    { id: 2, name: 'Mary', species: 'Mix', monkeyType: 'Orangutan', hasCoolTricks: false },
-    { id: 3, name: 'Doe', species: 'Mix', monkeyType: 'Gorilla' },
+    { id: 1, name: 'MOCK Lemur', family: 'Mock', region: 'Nowhere', status: 'Least Concern' },
+    { id: 2, name: 'MOCK Loris', family: 'Mock', region: 'Nowhere', status: 'Endangered', hasCoolTricks: true, },
+    { id: 3, name: 'MOCK Tarsier', family: 'Mock', region: 'Nowhere', status: 'Vulnerable', hasCoolTricks: false, },
   ]);
 
   monkeyList = this.monkeys.asReadonly();
