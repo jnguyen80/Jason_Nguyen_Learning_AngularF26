@@ -82,8 +82,7 @@ export class MonkeyService {
     return this.monkeys().find((monkey) => monkey.id === id);
   }
 
-  private idCounter = 7;
-  nextId(): number {
-    return this.idCounter++;
-  }
+nextId(): number {
+    return Math.max(0, ...this.monkeys().map((monkey) => monkey.id)) + 1;
+}
 }

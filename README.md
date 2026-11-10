@@ -60,9 +60,14 @@ For more information on using the Angular CLI, including detailed command refere
 
 ## API
 
+Part 1:
 I used MySafeInfo Primate Species. Documentation: https://mysafeinfo.com/api/data/primatespecies
 
 Example: https://mysafeinfo.com/api/data/primatespecies
 
+Part 3:
 I chose Option A, HttpClient with an Observable. The service subscribes and sets a signal so that the loading and error states are simple signals to control.
 The simple signal still drives add, edit, and delete which I found easier than httpResource.
+
+Part 4:
+My adds, edits and deletes only change the signal in memory, and nothing is sent to the API, which is read only. When the page is refreshed, the app starts again and loads the original API data, so my local changes are gone.
