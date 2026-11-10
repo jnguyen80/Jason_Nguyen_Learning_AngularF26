@@ -1,4 +1,11 @@
 <!--<app-monkey-list> </app-monkey-list>-->
 
+@if (errors.message(); as text) {
+  <div class="error-banner">
+       <span>{{ text }}</span>
+    <button (click)="errors.clear()">Dismiss</button>
+  </div>
+}
+
 <app-navbar />
 <router-outlet />
