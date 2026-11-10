@@ -6,4 +6,8 @@
   </button>
 
   <span>Editing is {{ guardSettings.guardEnabled() ? 'locked' : 'unlocked' }}</span>
+
+  @if (loading.isLoading()) {
+    <span>Loading...</span>
+  }
 </nav>

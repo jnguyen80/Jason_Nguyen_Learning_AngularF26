@@ -4,13 +4,14 @@ import { routes } from './app.routes';
 import { APP_CONFIG } from './shared/config/app-config';
 import { MonkeyService} from './services/monkey';
 import { MockMonkeyService } from './services/mock-monkey';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { loadingInterceptor } from './shared/interceptor/loading-interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes, withComponentInputBinding()),
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([loadingInterceptor])),
     {
       provide: APP_CONFIG,
       useValue: {
