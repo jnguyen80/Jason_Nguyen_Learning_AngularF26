@@ -27,13 +27,13 @@
 <p>{{ trickSummary() }}</p>
 <ul>
   @for (monkey of trickMonkeys() | slice:0:5; track monkey.id) {
-    <li>{{ monkey.name | titlecase}} the {{ monkey.family }}</li>
+    <li>{{ monkey.name }} the {{ monkey.family }}</li>
   }
 </ul>
 
 <h2>Monkeys with unknown tricks ({{ unknownTrickCount() }})</h2>
 <ul>
   @for (monkey of unknownTrickMonkeys(); track monkey.id) {
-    <li>{{ monkey.name }} the {{ monkey.family }}</li>
+    <li>{{ monkey.name | shorten: 15 | titlecase }} the {{ monkey.family }}</li>
   }
 </ul>

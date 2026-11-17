@@ -13,6 +13,7 @@
 
 <p>Family: {{ monkey().family }}</p>
 <p>Region: {{ monkey().region | uppercase}}</p>
+<p>Risk: {{ monkey().status | statusLabel | uppercase}}</p>
 
 @if (monkey().hasCoolTricks !== undefined) {
   <p>Has cool tricks: {{ monkey().hasCoolTricks ? 'Yes' : 'No' }}</p>

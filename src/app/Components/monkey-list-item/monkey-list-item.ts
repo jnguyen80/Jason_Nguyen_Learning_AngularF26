@@ -2,10 +2,11 @@ import { Component, input, output } from '@angular/core';
 import { TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Monkey } from '../../shared/models/monkey';
-import {MonkeyEvent} from '../../shared/models/monkey-event';
+import { MonkeyEvent } from '../../shared/models/monkey-event';
+import { StatusLabelPipe } from '../../pipes/status-label-pipe';
 
 @Component({
-  imports: [RouterLink, TitleCasePipe, UpperCasePipe],
+  imports: [RouterLink, TitleCasePipe, UpperCasePipe, StatusLabelPipe],
   selector: 'app-monkey-list-item',
   styleUrl: './monkey-list-item.css',
   templateUrl: './monkey-list-item.html',
