@@ -1,5 +1,5 @@
 @if (monkey(); as m) {
-  <h1>{{ m.name }}</h1>
+  <h1>{{ m.name | titlecase }}</h1>
   <p>Family: {{ m.family }}</p>
   <p>Region: {{ m.region }}</p>
   <p>Status: {{ m.status }}</p>

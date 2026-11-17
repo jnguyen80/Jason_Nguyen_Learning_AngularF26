@@ -1,4 +1,4 @@
-<h2>{{ monkey().name }}</h2>
+<h2>{{ monkey().name | titlecase}}</h2>
 
 @switch (monkey().status) {
 <!--  @case ('Chimpanzee') {<span class="badge chimpanzee">Chimpanzee</span>}-->
@@ -12,7 +12,7 @@
 }
 
 <p>Family: {{ monkey().family }}</p>
-<p>Region: {{ monkey().region }}</p>
+<p>Region: {{ monkey().region | uppercase}}</p>
 
 @if (monkey().hasCoolTricks !== undefined) {
   <p>Has cool tricks: {{ monkey().hasCoolTricks ? 'Yes' : 'No' }}</p>

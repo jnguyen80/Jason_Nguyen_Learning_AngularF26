@@ -26,8 +26,8 @@
 <h2>Monkeys with cool tricks ({{ trickMonkeys().length }})</h2>
 <p>{{ trickSummary() }}</p>
 <ul>
-  @for (monkey of trickMonkeys(); track monkey.id) {
-    <li>{{ monkey.name }} the {{ monkey.family }}</li>
+  @for (monkey of trickMonkeys() | slice:0:5; track monkey.id) {
+    <li>{{ monkey.name | titlecase}} the {{ monkey.family }}</li>
   }
 </ul>
 
