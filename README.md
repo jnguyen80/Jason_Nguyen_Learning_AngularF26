@@ -104,3 +104,13 @@ Output location: C:\Users\jason\PhpstormProjects\Jason_Nguyen_Learning_AngularF2
 
 Explaining: The detail page and edit form now load only when someone visits them, so the first download
 is smaller. The monkey list still loads right away because it's the first page people see.
+
+## Lifecycle
+
+Reading this.id() in the constructor: I got a compiled error on Angular which was "X [ERROR] NG8118: `id` is a required `input` and does not have a value in this context. [plugin angular-compiler]".
+The router creates the component first and the id hasn't arrived from the URL yet, so there is no value yet while the constructor is running.
+By the time ngOnInit runs, the input will already be set making reading this.id() work.
+
+What made ngOnDestroy run: It ran each time I left the detail page, by clicking back on the page.
+This tells me the router destroys the page component when you navigate away from it, and it creates a whole new one when you visit, instead of keeping it alive in the background.
+
