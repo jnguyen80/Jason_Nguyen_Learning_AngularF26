@@ -3,7 +3,7 @@
 <form class="monkey-form" [formGroup]="monkeyForm" (ngSubmit)="onSubmit()">
   <label>
     Name
-    <input type="text" formControlName="name" />
+    <input type="text" formControlName="name" #firstField/>
   </label>
   @if (monkeyForm.controls.name.touched) {
     @if (monkeyForm.controls.name.hasError('required')) {

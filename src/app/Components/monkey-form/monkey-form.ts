@@ -1,9 +1,12 @@
-import { Component, computed, effect, inject, input } from '@angular/core';
+import { Component, ElementRef, afterNextRender, computed, effect, inject, input, viewChild, } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Monkey } from '../../shared/models/monkey'
+import { Monkey } from '../../shared/models/monkey';
 import { MonkeyService } from '../../services/monkey';
-import { noWhitespaceValidator, nameNotFamilyValidator } from '../../shared/validator/monkey-validator';
+import {
+  noWhitespaceValidator,
+  nameNotFamilyValidator,
+} from '../../shared/validator/monkey-validator';
 
 @Component({
   imports: [ReactiveFormsModule],
@@ -17,6 +20,9 @@ export class MonkeyForm {
   private router = inject(Router);
 
   id = input<string>();
+
+  // Finds the element marked #firstField in the template.
+  private firstField = viewChild<ElementRef<HTMLInputElement>>('firstField');
 
   protected isEditMode = computed(() => this.id() !== undefined);
 
@@ -32,6 +38,12 @@ export class MonkeyForm {
   );
 
   constructor() {
+    // afterNextRender waits until Angular has created the form on the page, the input exists when focus() is called.
+    // ngOnInit runs before the form is created, so the input isn't available yet.
+    afterNextRender(() => {
+      this.firstField()?.nativeElement.focus();
+    });
+
     effect(() => {
       const id = this.id();
       if (id === undefined) {
