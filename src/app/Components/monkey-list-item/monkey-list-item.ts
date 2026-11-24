@@ -4,9 +4,10 @@ import { RouterLink } from '@angular/router';
 import { Monkey } from '../../shared/models/monkey';
 import { MonkeyEvent } from '../../shared/models/monkey-event';
 import { StatusLabelPipe } from '../../pipes/status-label-pipe';
+import { Confirm } from '../../directives/confirm';
 
 @Component({
-  imports: [RouterLink, TitleCasePipe, UpperCasePipe, StatusLabelPipe],
+  imports: [RouterLink, TitleCasePipe, UpperCasePipe, StatusLabelPipe, Confirm],
   selector: 'app-monkey-list-item',
   styleUrl: './monkey-list-item.css',
   templateUrl: './monkey-list-item.html',
