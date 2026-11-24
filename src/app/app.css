@@ -50,3 +50,12 @@
   }
 }
 
+.dark {
+  background-color: #222;
+  color: #eee;
+  min-height: 100vh;
+}
+
+.dark a {
+  color: #9cf;
+}

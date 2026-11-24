@@ -1,5 +1,5 @@
 <!--<app-monkey-list> </app-monkey-list>-->
-
+<div [class.dark]="prefs.dark()">
 @if (errors.message(); as text) {
   <div class="error-banner">
        <span>{{ text }}</span>
@@ -9,3 +9,4 @@
 
 <app-navbar />
 <router-outlet />
+</div>

@@ -4,6 +4,10 @@
   <p>Region: {{ m.region }}</p>
   <p>Status: {{ m.status }}</p>
 
+  <button type="button" (click)="saved.toggle(m.id)">
+    {{ saved.isSaved(m.id) ? 'Unsave' : 'Save' }}
+  </button>
+
   @if (m.hasCoolTricks !== undefined ) {
     <p>Has cool tricks: {{ m.hasCoolTricks ? 'Yes' : 'No' }}</p>
   } @else {

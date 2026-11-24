@@ -1,0 +1,9 @@
+<h1>Saved Monkeys</h1>
+
+@for (monkey of savedMonkeys(); track monkey.id) {
+  <p><a [routerLink]="['/monkeys', monkey.id]">{{ monkey.name | titlecase }}</a></p>
+} @empty {
+  <p>Nothing saved yet. Open a monkey and click Save.</p>
+}
+
+<a routerLink="/monkeys">Back to list</a>

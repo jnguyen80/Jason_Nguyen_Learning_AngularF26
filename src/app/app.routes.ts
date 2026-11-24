@@ -15,4 +15,8 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./Components/monkey-detail/monkey-detail').then((m) => m.MonkeyDetail),
   },
+  {
+    path: 'saved',
+    loadComponent: () => import('./Components/saved-list/saved-list').then((m) => m.SavedList),
+  },
 ];

@@ -4,6 +4,7 @@ import { MonkeyList } from './Components/monkey-list/monkey-list';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './Components/navbar/navbar';
 import { ErrorService } from './services/error';
+import { PreferencesService } from './services/preferences';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,5 @@ import { ErrorService } from './services/error';
 export class App {
   protected title = 'Monkeys from Planet of the Apes';
   protected errors = inject(ErrorService);
+  protected prefs = inject(PreferencesService);
 }

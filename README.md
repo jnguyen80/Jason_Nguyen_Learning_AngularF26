@@ -114,3 +114,10 @@ By the time ngOnInit runs, the input will already be set making reading this.id(
 What made ngOnDestroy run: It ran each time I left the detail page, by clicking back on the page.
 This tells me the router destroys the page component when you navigate away from it, and it creates a whole new one when you visit, instead of keeping it alive in the background.
 
+## localStorage
+
+I store the ids of the monkeys the user saved and their dark mode setting because that is information the user
+created and would be inconvenient to set up again after a refresh. The reason why monkey data is not stored from
+the API is due to it being fetched fresh on every page that is loaded. Something that must never be stored
+in a localStorage is anything private such as login or passwords because any script that is running can be read
+on the page.

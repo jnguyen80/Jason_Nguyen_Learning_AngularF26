@@ -7,6 +7,12 @@
 
   <span>Editing is {{ guardSettings.guardEnabled() ? 'locked' : 'unlocked' }}</span>
 
+  <a routerLink="/saved">Saved ({{ saved.savedIds().length }})</a>
+
+  <button (click)="prefs.toggleDark()">
+    {{ prefs.dark() ? 'Light mode' : 'Dark mode' }}
+  </button>
+
   @if (loading.isLoading()) {
     <span>Loading...</span>
   }

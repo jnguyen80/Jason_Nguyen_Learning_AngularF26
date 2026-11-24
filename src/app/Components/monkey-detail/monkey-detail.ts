@@ -3,6 +3,7 @@ import { TitleCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MonkeyService } from '../../services/monkey';
 import { Highlight } from '../../directives/highlight';
+import { SavedService } from '../../services/saved';
 
 @Component({
   imports: [RouterLink, TitleCasePipe, Highlight],
@@ -16,6 +17,8 @@ export class MonkeyDetail implements OnInit, OnDestroy {
   id = input.required<string>();
 
   protected monkey = computed(() => this.monkeyService.getMonkey(Number(this.id())));
+
+  protected saved = inject(SavedService);
 
   private openedAt = 0;
   private name = 'unknown monkey';
