@@ -5,9 +5,10 @@ import { MonkeyEvent } from '../../shared/models/monkey-event';
 import { MonkeyService } from '../../services/monkey';
 import { MonkeyForm } from '../monkey-form/monkey-form';
 import { ShortenPipe } from '../../pipes/shorten-pipe';
+import { Highlight } from '../../directives/highlight';
 
 @Component({
-  imports: [MonkeyListItem, MonkeyForm, SlicePipe, TitleCasePipe, ShortenPipe],
+  imports: [MonkeyListItem, MonkeyForm, SlicePipe, TitleCasePipe, ShortenPipe, Highlight],
   selector: 'app-monkey-list',
   styleUrl: './monkey-list.css',
   templateUrl: './monkey-list.html',

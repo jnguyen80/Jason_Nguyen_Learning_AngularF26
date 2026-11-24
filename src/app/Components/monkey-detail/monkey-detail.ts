@@ -2,9 +2,10 @@ import { Component, OnDestroy, OnInit, computed, inject, input } from '@angular/
 import { TitleCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MonkeyService } from '../../services/monkey';
+import { Highlight } from '../../directives/highlight';
 
 @Component({
-  imports: [RouterLink, TitleCasePipe],
+  imports: [RouterLink, TitleCasePipe, Highlight],
   selector: 'app-monkey-detail',
   styleUrl: './monkey-detail.css',
   templateUrl: './monkey-detail.html',
